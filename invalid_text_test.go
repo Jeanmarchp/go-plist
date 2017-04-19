@@ -23,13 +23,15 @@ var InvalidTextPlists = []struct {
 	{"Missing Equals in Dictionary", `{"A"A;}`},
 	{"Missing Semicolon in Dictionary", `{"A"=A}`},
 	{"Invalid GNUStep type", "<*F33>"},
-	{"Invalid GNUStep type data", "(<*I>"},
+	{"Invalid GNUStep int", "(<*I>"},
+	{"Invalid GNUStep date", "<*D5>"},
 	{"Invalid data", "<EQ>"},
-	{"Truncated unicode escape", `"\u231"`},
-	{"Truncated hex escape", `"\x2"`},
-	{"Truncated octal escape", `"\02"`},
+	{"Truncated unicode escape", `"\u231`},
+	{"Truncated hex escape", `"\x2`},
+	{"Truncated octal escape", `"\02`},
 	{"Truncated data", `<33`},
 	{"Truncated block comment", `/* hello`},
+	{"Truncated quoted string", `"hi`},
 }
 
 func TestInvalidTextPlists(t *testing.T) {
